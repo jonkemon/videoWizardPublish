@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300">
+	<mx:Label text="Upload File From Flex to PHP" fontWeight="bold"/>
+	<mx:Label text="Choose a file..." id="statusText"/>
+	<mx:Button click="uploadVideoFiles.uploadFile();" label="Upload File"/>
+</mx:VBox>
