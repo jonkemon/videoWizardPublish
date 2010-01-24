@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application 
 	xmlns:mx="http://www.adobe.com/2006/mxml"
-	xmlns:local="com.telecoms.media.videowizard.views.*"
+	xmlns:views="com.telecoms.media.videowizard.views.*"
+	xmlns:control="com.telecoms.media.videowizard.control.*"
 	layout="vertical" 
 	borderStyle="outset" 
 	borderColor="#008DEF" backgroundGradientColors="[#FFFFFF, #DBDBDB]" verticalAlign="left" horizontalAlign="center">
@@ -9,21 +10,15 @@
     <mx:Script>
     	<![CDATA[
 
-			import com.telecoms.media.videowizard.control.UploadVideoFiles;
+			import com.telecoms.media.videowizard.control.UploadVideoFilesClass;
 			import mx.controls.SWFLoader;
-
-			public var uploadVideoFiles:UploadVideoFiles = new UploadVideoFiles();
-			public var uploadFolderSelect:String;
+			import com.telecoms.media.videowizard.model.vo.UploadStatus;
 			
 			private var videoUrl:String = "";
 			private var videoHeight:String = "";
 	      	private var videoWidth:String = "";
-		
-			/* private function previewCode():void {
-			videoUrl = "http://cdn.informa.com.lg1x8.simplecdn.net/fmh/question_3_medium.flv";
-			movieContainer.source = videoUrl;
-			movieContainer.play();
-			} */
+	      	
+	      	public var fileStatus:UploadStatus = new UploadStatus;
 
 			private function createCode(event:Event):void {
 	      	var playerSelect:String = event.currentTarget.selectedItem.data;
@@ -38,7 +33,6 @@
 	      	}
 	      	resultCode.text = finalCode;
 	      	
-	      	/* previewCode(); */
       }
 		
 		]]>
@@ -51,26 +45,8 @@
 	<!--<local:UploadForm/>-->
 	
 	<!--Upload files section-->
-	<mx:Panel layout="vertical" headerHeight="0" borderStyle="solid" horizontalAlign="right" verticalAlign="bottom" backgroundColor="#FFFFFF" width="590" paddingTop="10" paddingRight="40">
-		<mx:ComboBox id="SiteFolderSelect" width="500" change="uploadFolderSelect = SiteFolderSelect.selectedItem.folder" editable="false">
-            <mx:dataProvider>
-                <mx:Object label="Choose your Website" folder="general"/>
-                <mx:Object label="IIR Player" folder="iir"/>
-                <mx:Object label="ComWorld" folder="com_series"/>
-                <mx:Object label="DTVE" folder="dtve_net"/>
-                <mx:Object label="LTE Player" folder="lte"/>
-                <mx:Object label="IPTV Player" folder="iptv"/>
-                <mx:Object label="IPTV-News Video Player" folder="iptvnews"/>
-                <mx:Object label="ComWorld Video Player" folder="com_series"/>
-            </mx:dataProvider>
-        </mx:ComboBox>
-		<mx:HBox verticalAlign="middle">
-			<mx:Label text="Upload Video File to the NL server" fontWeight="bold" paddingLeft="10"/>
-			<mx:Label text="Choose a file..." id="statusText"/>
-			<mx:Button click="uploadVideoFiles.uploadFile();" label="Browse File"/>
-			<mx:Button click="uploadVideoFiles.uploadFileHandler(uploadFolderSelect);" label="Upload File"/>
-		</mx:HBox>
-	</mx:Panel>
+	
+	<views:UploadForm/>
 	
 	<!--Movie Details section-->
     <mx:Label text="Enter your Movie Player details here" fontFamily="Verdana" fontWeight="bold" fontSize="12" textAlign="center"/>
@@ -85,10 +61,10 @@
                 <mx:TextInput id="imageURL" width="438"/>
             </mx:FormItem>
             <mx:FormItem label="Height:">
-                <mx:TextInput id="vHeight" width="200" text="150"/>
+                <mx:TextInput id="vHeight" width="200" text=""/>
             </mx:FormItem>
             <mx:FormItem label="Width:">
-                <mx:TextInput id="vWidth" width="200" text="200"/>
+                <mx:TextInput id="vWidth" width="200" text=""/>
             </mx:FormItem>                    
             <mx:FormItem label="Player:">
             
