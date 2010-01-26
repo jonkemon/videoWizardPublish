@@ -26,7 +26,7 @@ package com.telecoms.media.videowizard.control
 		private var urlRequest:URLRequest;
 		private var fileReferenceList:FileReferenceList;
 		private var fileReference:FileReference;
-		private var serverSideScript:String = "http://www.mazieswake.co.uk/php/videowizard/php/upload.php";
+		private var serverSideScript:String = "http://media2.telecoms.com/cdn/videowizard/upload.php";
 		private var eventDispatcherButton:EventDispatcher;
 		
 		//Final URL for script http://media2.telecoms.com/cdn/videowizard/upload.php
