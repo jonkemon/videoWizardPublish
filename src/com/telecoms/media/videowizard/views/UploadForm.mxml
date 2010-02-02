@@ -4,16 +4,6 @@
 	xmlns:mx="http://www.adobe.com/2006/mxml"
 	xmlns:control="com.telecoms.media.videowizard.control.*">
 	
-	<mx:Script>
-		<![CDATA[
-			import com.telecoms.media.videowizard.model.vo.UploadStatus;
-			import com.telecoms.media.videowizard.control.UploadVideoFilesClass;
-			
-			public var uploadVideoFiles:UploadVideoFilesClass;
-			
-		]]>
-	</mx:Script>
-	
 	<mx:Panel layout="vertical" headerHeight="0" borderStyle="solid" horizontalAlign="right" verticalAlign="bottom" backgroundColor="#FFFFFF" width="590" paddingTop="10" paddingRight="40">
 		<mx:ComboBox id="SiteFolderSelect" width="500" change="uploadFolderSelect = SiteFolderSelect.selectedItem.folder" editable="false">
             <mx:dataProvider>
@@ -25,6 +15,7 @@
                 <mx:Object label="IPTV Player" folder="iptv"/>
                 <mx:Object label="IPTV-News Video Player" folder="iptvnews"/>
                 <mx:Object label="ComWorld Video Player" folder="com_series"/>
+                <mx:Object label="WiMAX Video Player" folder="wimax"/>
             </mx:dataProvider>
         </mx:ComboBox>
 		<mx:HBox verticalAlign="middle">

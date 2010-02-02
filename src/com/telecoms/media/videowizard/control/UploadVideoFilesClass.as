@@ -40,7 +40,7 @@ package com.telecoms.media.videowizard.control
 
 		public function uploadFile():void 
 		{
-			var imageTypes:FileFilter = new FileFilter("Videos (*.f4v, *.flv, *.mov, *.png)", "*.f4v; *.flv; *.mov; *.png");
+			var imageTypes:FileFilter = new FileFilter("Videos (*.f4v, *.flv, *.mov)", "*.f4v; *.flv; *.mov");
 			var allTypes:Array = new Array(imageTypes);
 			fileReferenceList.browse(allTypes);
 		}

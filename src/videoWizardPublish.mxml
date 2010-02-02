@@ -40,9 +40,7 @@
 
 <mx:VBox id="wrapper" horizontalAlign="center">
 
-    <mx:Label text="Flash Video Wizard" fontFamily="Verdana" fontWeight="bold" fontSize="19" textAlign="center"/>    	
-    	
-	<!--<local:UploadForm/>-->
+    <mx:Label text="Flash Video Wizard" fontFamily="Verdana" fontWeight="bold" fontSize="19" textAlign="center"/>
 	
 	<!--Upload files section-->
 	
@@ -50,9 +48,7 @@
 	
 	<!--Movie Details section-->
     <mx:Label text="Enter your Movie Player details here" fontFamily="Verdana" fontWeight="bold" fontSize="12" textAlign="center"/>
-    
 	<mx:Panel width="590" headerHeight="0" borderStyle="solid" horizontalAlign="center" verticalAlign="middle" paddingTop="10">               
-
         <mx:Form width="560" height="170">
             <mx:FormItem label="Movie:">
                 <mx:TextInput id="movieURL" width="438"/>
@@ -67,7 +63,6 @@
                 <mx:TextInput id="vWidth" width="200" text=""/>
             </mx:FormItem>                    
             <mx:FormItem label="Player:">
-            
                 <mx:ComboBox id="playerSelect" width="438" change="createCode(event)" editable="false">
                     <mx:dataProvider>
                         <mx:Object label="Choose your Website Player"/>
@@ -79,26 +74,17 @@
                         <mx:Object label="Squiz Black Player" data="http://squiz.informatm.com/__data/assets/file/0020/54173/itmplayer.swf" />
                         <mx:Object label="IPTV-News Video Player" data="http://squiz.informatm.com/__data/assets/file/0020/54245/jwplay.swf" folder="iptvnews"/>
                         <mx:Object label="ComWorld Video Player" data="http://squiz.informatm.com/__data/assets/file/0020/54245/jwplay.swf" folder="com_series"/>
+                        <mx:Object label="WiMAX Video Player" data="http://squiz.informatm.com/__data/assets/file/0020/54245/jwplay.swf" folder="wimax"/>
                     </mx:dataProvider>
-                </mx:ComboBox>
-                
+                </mx:ComboBox>    
             </mx:FormItem>
-        </mx:Form>
-        
+        </mx:Form> 
     </mx:Panel>
 	
-	<!--Output Code section-->
-	<mx:Label text="Paste this code into your site" fontFamily="Verdana" fontWeight="bold" fontSize="12" textAlign="center"/>
-	     
+<!--Output Code section-->
+	<mx:Label text="Paste this code into your site" fontFamily="Verdana" fontWeight="bold" fontSize="12" textAlign="center"/>     
 	<mx:Panel width="590" borderStyle="solid" horizontalAlign="center" verticalAlign="middle">
 	   	<mx:TextArea id = 'resultCode' fontWeight = 'bold' color = 'green' height="150" text="" fontSize="16" borderColor="#FFFFFF" width="560"/>
 	</mx:Panel>
-
-</mx:VBox>
-
-<!--<mx:VBox id="previewCodeContainer" horizontalAlign="left" height="600">
-	<mx:SWFLoader id="movieContainer" source="com/telecoms/media/videowizard/views/jwplay.swf" scaleContent="true" autoLoad="true" width="106"/>
-	<mx:VideoDisplay id="movieContainer" autoPlay="false" height="299" width="589"/>
-</mx:VBox>-->
-	
+</mx:VBox>	
 </mx:Application>
